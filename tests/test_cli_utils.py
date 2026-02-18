@@ -17,9 +17,9 @@ def test_parse_args_custom_source() -> None:
     assert args.camera_source == "1"
 
 
-def test_parse_args_default_source_is_dev_video0() -> None:
+def test_parse_args_default_source_is_index_0() -> None:
     args = parse_args([])
-    assert args.camera_source == "/dev/video0"
+    assert args.camera_source == "0"
 
 
 def test_parse_args_rejects_unknown_flag() -> None:

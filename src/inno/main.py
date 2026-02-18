@@ -25,8 +25,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Open a webcam/video source.")
     parser.add_argument(
         "--camera-source",
-        default="/dev/video0",
-        help="Camera source index (e.g. 0) or video path/URL.",
+        default="0",
+        help="Camera source index (e.g. 0) or video path/URL. Defaults to 0.",
     )
     return parser.parse_args(argv)
 

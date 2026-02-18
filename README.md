@@ -5,7 +5,7 @@ Lightweight OpenCV webcam viewer managed with `uv`.
 ### Requirements
 
 - Python `>=3.10`
-- A working camera source (default: `/dev/video0`)
+- A working camera source (default: `0`)
 
 ### Setup
 
@@ -25,7 +25,7 @@ Custom source examples:
 
 ```bash
 uv run inno --camera-source 1
-uv run inno --camera-source /dev/video2
+uv run inno --camera-source 2
 ```
 
 ### Controls
@@ -34,6 +34,7 @@ uv run inno --camera-source /dev/video2
 
 ### Runtime Defaults
 
+- Camera source: `0`
 - Capture width: `1920`
 - Capture height: `1080`
 - Capture FPS: `30`
