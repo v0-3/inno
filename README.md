@@ -1,9 +1,13 @@
 ## Inno
 
-Simple Python OpenCV app managed with `uv`.  
-It opens a webcam/video source with fixed capture defaults.
+Lightweight OpenCV webcam viewer managed with `uv`.
 
-### Install dependencies
+### Requirements
+
+- Python `>=3.10`
+- A working camera source (default: `/dev/video0`)
+
+### Setup
 
 ```bash
 uv sync
@@ -11,24 +15,29 @@ uv sync
 
 ### Run
 
+Default source:
+
 ```bash
 uv run inno
 ```
 
-With a custom source:
+Custom source examples:
 
 ```bash
 uv run inno --camera-source 1
+uv run inno --camera-source /dev/video2
 ```
 
 ### Controls
 
 - Press `q` to quit.
 
-### Defaults
+### Runtime Defaults
 
-- Camera source: `/dev/video0`
-- Frame width: `1920`
-- Frame height: `1080`
-- FPS: `30`
-- Pixel format: `MJPG`
+- Capture width: `1920`
+- Capture height: `1080`
+- Capture FPS: `30`
+- Capture pixel format: `MJPG`
+- Window default size: `1280x720`
+
+If reading an initial frame fails with requested capture defaults, the app retries with driver defaults before exiting.
